@@ -1,0 +1,18 @@
+package com;
+
+import java.util.List;
+
+public class Application {
+
+	public static void main(String[] args) {
+		List<Employee> employees = EmployeeUtil.getEmployees();
+		employees.forEach(System.out::println);
+		double avgSalary = employees.stream().mapToInt(employee -> employee.getSalary()).average().getAsDouble();		
+		int minSalary = employees.stream().mapToInt(employee -> employee.getSalary()).min().getAsInt();
+		int maxSalary = employees.stream().mapToInt(employee -> employee.getSalary()).max().getAsInt();
+		
+		System.out.println("Average" + Math.round(avgSalary));
+		System.out.println("Min" + Math.round(avgSalary));
+		System.out.println("Max" + Math.round(avgSalary));
+	}
+}

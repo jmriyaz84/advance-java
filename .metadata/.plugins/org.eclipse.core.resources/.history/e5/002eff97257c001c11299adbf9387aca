@@ -1,0 +1,32 @@
+package com;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.IntStream;
+
+public class EmployeeUtil {
+
+	private EmployeeUtil() {
+	};
+
+	public static List<Employee> getEmployees() {
+		List<Employee> employees = new ArrayList<>();
+		IntStream.range(1, 100).forEach(id -> {
+			Employee employee = new Employee(id, Random);
+		});
+		return employees;
+	}
+
+	public static long getRandomId() {
+		long lowerLimit = 1000_0000_0000_0000L;
+		long upperLimit = 9999_9999_9999_9999L;
+		return ThreadLocalRandom.current().nextLong(lowerLimit, upperLimit);
+	}
+	
+	public static long getRandomAge() {
+		long lowerLimit = 100L;
+		long upperLimit = 9999_9999_9999_9999L;
+		return ThreadLocalRandom.current().nextLong(lowerLimit, upperLimit);
+	}
+}

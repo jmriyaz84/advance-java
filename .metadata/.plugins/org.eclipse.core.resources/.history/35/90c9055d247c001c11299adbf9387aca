@@ -1,0 +1,15 @@
+package com;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmployeeUtil {
+
+	private EmployeeUtil() {
+	};
+	
+	public static List<Employee> getEmployees(){
+		List<Employee> employees = new ArrayList<>();
+	}
+
+}
